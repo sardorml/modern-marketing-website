@@ -492,7 +492,7 @@ export interface ApiHeroSlideHeroSlide extends Struct.CollectionTypeSchema {
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
-    description: 'Legal services offered by the firm';
+    description: 'Services offered';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';
@@ -657,7 +657,7 @@ export interface ApiSubscriberSubscriber extends Struct.CollectionTypeSchema {
 export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
   collectionName: 'team_members';
   info: {
-    description: 'Law firm team members';
+    description: 'Team members';
     displayName: 'Team Member';
     pluralName: 'team-members';
     singularName: 'team-member';

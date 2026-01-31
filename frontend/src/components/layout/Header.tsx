@@ -60,7 +60,7 @@ export default function Header({ lng, services, siteSettings, variant = 'default
             {logoUrl ? (
               <img src={logoUrl} alt="Logo" className="h-12 w-auto" />
             ) : (
-              <span className="text-white font-serif text-xl font-bold">Law Firm</span>
+              <span className="text-white font-serif text-xl font-bold">Marketing</span>
             )}
           </Link>
 

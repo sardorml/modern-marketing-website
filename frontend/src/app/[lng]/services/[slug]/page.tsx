@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const service = await getServiceBySlug(slug, lng);
   if (!service) return { title: 'Service Not Found' };
   return {
-    title: `${service.name} - Law Firm`,
+    title: service.name,
     description: service.description || undefined,
   };
 }

@@ -5,7 +5,7 @@
     "singularName": "team-member",
     "pluralName": "team-members",
     "displayName": "Team Member",
-    "description": "Law firm team members"
+    "description": "Team members"
   },
   "options": {
     "draftAndPublish": true

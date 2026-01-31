@@ -1,5 +1,5 @@
 {
-  "name": "law-firm-website",
+  "name": "marketing-website",
   "private": true,
   "scripts": {
     "dev:backend": "cd backend && npm run develop",

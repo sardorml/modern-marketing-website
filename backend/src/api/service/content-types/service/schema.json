@@ -5,7 +5,7 @@
     "singularName": "service",
     "pluralName": "services",
     "displayName": "Service",
-    "description": "Legal services offered by the firm"
+    "description": "Services offered"
   },
   "options": {
     "draftAndPublish": true

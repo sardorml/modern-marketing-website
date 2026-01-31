@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Law Firm - Mohammed bin Sameeh Al-Essawy",
-  description: "Leading legal offices offering exceptional advisory services",
+  title: "Marketing Website - Mohammed bin Sameeh Al-Essawy",
+  description: "A modern marketing website",
 };
 
 export default function RootLayout({

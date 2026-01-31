@@ -1,6 +1,6 @@
-# Law Firm Website
+# Marketing Website
 
-A modern, multilingual law firm website built with **Strapi CMS** (backend) and **Next.js** (frontend).
+A modern, multilingual marketing website built with **Strapi CMS** (backend) and **Next.js** (frontend).
 
 ## Tech Stack
 
@@ -23,8 +23,8 @@ A modern, multilingual law firm website built with **Strapi CMS** (backend) and 
 │   ├── src/
 │   │   ├── api/             # Content type APIs
 │   │   │   ├── hero-slide/      # Homepage slider
-│   │   │   ├── service/         # Legal services
-│   │   │   ├── team-member/     # Attorney profiles
+│   │   │   ├── service/         # Services
+│   │   │   ├── team-member/     # Team profiles
 │   │   │   ├── testimonial/     # Client reviews
 │   │   │   ├── subscriber/      # Newsletter signups
 │   │   │   └── site-setting/    # Global settings
@@ -131,8 +131,8 @@ On first run, you'll be prompted to create a Strapi admin account.
 | Content Type   | Description                                      |
 | -------------- | ------------------------------------------------ |
 | **Hero Slide** | Homepage slider items (image/video support)      |
-| **Service**    | Legal services with rich text content            |
-| **Team Member**| Attorney/staff profiles                          |
+| **Service**    | Services with rich text content                  |
+| **Team Member**| Team/staff profiles                              |
 | **Testimonial**| Client reviews and feedback                      |
 | **Subscriber** | Newsletter email subscriptions                   |
 | **Site Setting**| Global config (logo, social links, headings)   |
