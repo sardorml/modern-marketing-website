@@ -54,6 +54,11 @@
     "ctaLink": {
       "type": "string"
     },
+    "sideImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "order": {
       "type": "integer",
       "default": 0

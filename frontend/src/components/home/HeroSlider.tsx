@@ -5,7 +5,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Image from 'next/image';
+// import Image from 'next/image';
 import type { HeroSlide } from '@/lib/api/heroSlides';
 import type { Locale } from '@/i18n/settings';
 import { getStrapiMediaUrl } from '@/lib/api/strapi';
@@ -38,10 +38,6 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
         navigation
         pagination={{
           clickable: true,
-          renderBullet: (index, className) =>
-            `<span class="${className}" style="display:block;margin:8px 0;"></span>`,
-          el: '.hero-pagination',
-          type: 'bullets',
         }}
         loop
         className="h-full w-full"
@@ -62,12 +58,11 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
                   <source src={getStrapiMediaUrl(slide.video)} type="video/mp4" />
                 </video>
               ) : slide.image ? (
-                <Image
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
                   src={getStrapiMediaUrl(slide.image)}
                   alt={slide.heading}
-                  fill
-                  className="object-cover"
-                  priority
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               ) : (
                 <div className="absolute inset-0 bg-brand-brown-500" />
@@ -79,22 +74,37 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
               {/* Content */}
               <div className="relative z-10 h-full flex items-center">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                  <div className="max-w-xl">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">
-                      {slide.heading}
-                    </h1>
-                    {slide.description && (
-                      <p className="text-white/80 text-sm sm:text-base mb-6 leading-relaxed">
-                        {slide.description}
-                      </p>
-                    )}
-                    {slide.ctaLabel && slide.ctaLink && (
-                      <a
-                        href={slide.ctaLink}
-                        className="inline-block bg-white text-brand-brown-500 px-6 py-3 text-sm font-medium hover:bg-brand-brown-50 transition"
-                      >
-                        {slide.ctaLabel}
-                      </a>
+                  <div className="flex items-center justify-between gap-8">
+                    {/* Text content */}
+                    <div className="max-w-xl">
+                      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">
+                        {slide.heading}
+                      </h1>
+                      {slide.description && (
+                        <p className="text-white/80 text-sm sm:text-base mb-6 leading-relaxed">
+                          {slide.description}
+                        </p>
+                      )}
+                      {slide.ctaLabel && slide.ctaLink && (
+                        <a
+                          href={slide.ctaLink}
+                          className="inline-block bg-white text-brand-brown-500 px-6 py-3 text-sm font-medium hover:bg-brand-brown-50 transition rounded-[12px]"
+                        >
+                          {slide.ctaLabel}
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Side image */}
+                    {slide.sideImage && (
+                      <div className="hidden lg:block shrink-0">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={getStrapiMediaUrl(slide.sideImage)}
+                            alt={slide.sideImage.alternativeText || slide.heading}
+                            className="relative w-[370px] h-[370px] object-cover"
+                          />
+                      </div>
                     )}
                   </div>
                 </div>
@@ -104,8 +114,6 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
         ))}
       </Swiper>
 
-      {/* Vertical dots on left side */}
-      <div className="hero-pagination absolute start-6 top-1/2 -translate-y-1/2 z-20 flex flex-col" />
     </section>
   );
 }

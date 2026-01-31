@@ -42,7 +42,7 @@ export default function Header({ lng, services, siteSettings, variant = 'default
             <SearchInline lng={lng} variant="fullwidth" initialQuery={searchQuery} />
             <a
               href={bookUrl}
-              className="shrink-0 border border-white text-white px-4 py-2 text-sm hover:bg-white/10 transition"
+              className="shrink-0 border border-white text-white px-4 py-2 text-sm hover:bg-white/10 transition rounded-[8px]"
             >
               {bookLabel}
             </a>
@@ -105,7 +105,7 @@ export default function Header({ lng, services, siteSettings, variant = 'default
             <LanguageToggle lng={lng} />
             <a
               href={bookUrl}
-              className="hidden sm:block border border-white text-white px-4 py-2 text-sm hover:bg-white/10 transition"
+              className="hidden sm:block border border-white text-white px-4 py-2 text-sm hover:bg-white/10 transition rounded-[8px]"
             >
               {bookLabel}
             </a>
@@ -165,7 +165,7 @@ export default function Header({ lng, services, siteSettings, variant = 'default
               <Link href="#" className="text-white text-sm py-2">
                 {t('nav.contact')}
               </Link>
-              <a href={bookUrl} className="text-white text-sm py-2 border border-white px-4 text-center mt-2">
+              <a href={bookUrl} className="text-white text-sm py-2 border border-white px-4 text-center mt-2 rounded-[12px]">
                 {bookLabel}
               </a>
             </div>

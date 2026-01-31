@@ -64,25 +64,38 @@ cd ../frontend && npm install
 
 ### 2. Environment Setup
 
-**Backend** (`backend/.env`):
+Copy the example environment files and update as needed:
 
-```env
-HOST=0.0.0.0
-PORT=1337
-APP_KEYS=your-app-keys
-API_TOKEN_SALT=your-api-token-salt
-ADMIN_JWT_SECRET=your-admin-jwt-secret
-TRANSFER_TOKEN_SALT=your-transfer-token-salt
-JWT_SECRET=your-jwt-secret
+```bash
+# Backend
+cp backend/.env.example backend/.env
+
+# Frontend
+cp frontend/.env.example frontend/.env.local
 ```
 
-> See `backend/.env.example` for a template.
+**Backend** (`backend/.env`):
+
+| Variable              | Description                              |
+| --------------------- | ---------------------------------------- |
+| `HOST`                | Server host (default: `0.0.0.0`)         |
+| `PORT`                | Server port (default: `1337`)            |
+| `APP_KEYS`            | Comma-separated secret keys              |
+| `API_TOKEN_SALT`      | Salt for API tokens                      |
+| `ADMIN_JWT_SECRET`    | JWT secret for admin panel               |
+| `TRANSFER_TOKEN_SALT` | Salt for transfer tokens                 |
+| `JWT_SECRET`          | JWT secret for user authentication       |
+| `ENCRYPTION_KEY`      | Encryption key for sensitive data        |
+| `DATABASE_CLIENT`     | Database type (`sqlite` or `postgres`)   |
+| `DATABASE_FILENAME`   | SQLite file path (if using SQLite)       |
+
+> Generate secure keys with: `openssl rand -base64 24`
 
 **Frontend** (`frontend/.env.local`):
 
-```env
-NEXT_PUBLIC_STRAPI_URL=http://localhost:1337
-```
+| Variable                 | Description                              |
+| ------------------------ | ---------------------------------------- |
+| `NEXT_PUBLIC_STRAPI_URL` | Strapi backend URL (default: `http://localhost:1337`) |
 
 ### 3. Run Development Servers
 

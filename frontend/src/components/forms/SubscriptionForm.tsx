@@ -40,7 +40,7 @@ export default function SubscriptionForm({ lng }: SubscriptionFormProps) {
   return (
     <div>
       <form onSubmit={formik.handleSubmit} className="flex items-center">
-        <div className="flex border border-white/50">
+        <div className="flex border border-white/50 rounded-[12px] overflow-hidden">
           <input
             type="email"
             name="email"

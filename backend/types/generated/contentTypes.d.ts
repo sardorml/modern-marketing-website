@@ -481,6 +481,7 @@ export interface ApiHeroSlideHeroSlide extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'image'>;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
+    sideImage: Schema.Attribute.Media<'images'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
