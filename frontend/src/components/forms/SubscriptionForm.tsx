@@ -38,9 +38,9 @@ export default function SubscriptionForm({ lng }: SubscriptionFormProps) {
   }, [isSuccess]);
 
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit} className="flex items-center">
-        <div className="flex border border-white/50 rounded-[12px] overflow-hidden">
+    <div className="w-full sm:w-auto">
+      <form onSubmit={formik.handleSubmit} className="flex flex-col items-center sm:items-end">
+        <div className="flex rounded-[6px] overflow-hidden border-2 border-white bg-white p-1">
           <input
             type="email"
             name="email"
@@ -48,26 +48,27 @@ export default function SubscriptionForm({ lng }: SubscriptionFormProps) {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             placeholder={t('footer.emailPlaceholder')}
-            className="bg-transparent text-white placeholder-white/60 px-4 py-2 text-sm outline-none w-48"
+            className="bg-white text-gray-900 placeholder:text-gray-500 px-4 py-1.5 text-sm text-left outline-none w-44 sm:w-52 min-w-0"
           />
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-white text-brand-brown-500 px-4 py-2 text-sm font-medium hover:bg-brand-brown-50 transition disabled:opacity-50"
+            className="rounded-[8px] bg-brand-brown-500 text-white px-5 py-1.5 text-sm font-medium hover:bg-brand-brown-400 transition disabled:opacity-50 shrink-0"
           >
             {isSubmitting ? '...' : t('footer.subscribeBtn')}
           </button>
         </div>
+        {/* Reserved height prevents layout shift when error/success appears */}
+        <div className="min-h-5 w-full flex flex-col items-center justify-end">
+          {formik.touched.email && formik.errors.email ? (
+            <p className="text-red-400 text-xs text-center w-full">{formik.errors.email}</p>
+          ) : isSuccess ? (
+            <p className="text-green-300 text-xs text-center w-full">{t('footer.subscribeSuccess')}</p>
+          ) : error ? (
+            <p className="text-red-400 text-xs text-center w-full">{error}</p>
+          ) : null}
+        </div>
       </form>
-      {formik.touched.email && formik.errors.email && (
-        <p className="text-red-300 text-xs mt-1">{formik.errors.email}</p>
-      )}
-      {isSuccess && (
-        <p className="text-green-300 text-xs mt-1">{t('footer.subscribeSuccess')}</p>
-      )}
-      {error && (
-        <p className="text-red-300 text-xs mt-1">{error}</p>
-      )}
     </div>
   );
 }

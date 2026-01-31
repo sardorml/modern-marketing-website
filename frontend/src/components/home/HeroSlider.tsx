@@ -5,7 +5,6 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import Image from 'next/image';
 import type { HeroSlide } from '@/lib/api/heroSlides';
 import type { Locale } from '@/i18n/settings';
 import { getStrapiMediaUrl } from '@/lib/api/strapi';
@@ -21,7 +20,7 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
 
   if (slides.length === 0) {
     return (
-      <section className="relative h-[80vh] bg-brand-brown-500 flex items-center justify-center">
+      <section className="relative min-h-screen h-screen bg-brand-brown-500 flex items-center justify-center">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-white text-center">
           <h1 className="text-4xl font-serif font-bold">{t('common.loading')}</h1>
@@ -31,7 +30,7 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
   }
 
   return (
-    <section className="relative h-[80vh]">
+    <section className="relative min-h-screen h-screen">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -74,9 +73,9 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
               {/* Content */}
               <div className="relative z-10 h-full flex items-center">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                  <div className="flex items-center justify-between gap-8">
+                  <div className="flex items-start justify-between gap-8">
                     {/* Text content */}
-                    <div className="max-w-xl">
+                    <div className="max-w-xl mt-12">
                       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">
                         {slide.heading}
                       </h1>

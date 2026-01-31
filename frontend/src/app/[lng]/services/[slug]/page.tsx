@@ -8,7 +8,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import BlocksRenderer from '@/components/service/BlocksRenderer';
 import BackButton from '@/components/service/BackButton';
-import Image from 'next/image';
 import { getStrapiMediaUrl } from '@/lib/api/strapi';
 
 interface ServicePageProps {
@@ -46,12 +45,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {/* Hero Image */}
       <section className="relative h-[50vh]">
         {service.image ? (
-          <Image
+          <img
             src={getStrapiMediaUrl(service.image)}
             alt={service.name}
-            fill
-            className="object-cover grayscale brightness-50"
-            priority
+            className="absolute inset-0 w-full h-full object-cover grayscale brightness-50"
           />
         ) : (
           <div className="absolute inset-0 bg-brand-brown-500" />

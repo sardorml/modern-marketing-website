@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Locale } from '@/i18n/settings';
 import type { Service } from '@/lib/api/services';
 import type { SiteSettings } from '@/lib/api/siteSettings';
@@ -59,7 +58,7 @@ export default function Header({ lng, services, siteSettings, variant = 'default
           {/* Logo */}
           <Link href={`/${lng}`} className="shrink-0">
             {logoUrl ? (
-              <Image src={logoUrl} alt="Logo" width={80} height={60} className="h-12 w-auto" />
+              <img src={logoUrl} alt="Logo" className="h-12 w-auto" />
             ) : (
               <span className="text-white font-serif text-xl font-bold">Law Firm</span>
             )}
