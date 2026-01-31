@@ -67,9 +67,9 @@ export default function TestimonialSection({ testimonials, lng, heading, descrip
                   )}
 
                   {/* Quote - stretches to image height, name/title at bottom */}
-                  <div className="flex-1 flex flex-col min-h-0">
-                    <blockquote className="text-white/70 text-lg lg:text-xl leading-relaxed mb-8">
-                      &ldquo;{testimonial.quote}&rdquo;
+                  <div className="flex-1 flex flex-col min-h-0 max-w-xl">
+                    <blockquote className="text-white/70 text-lg lg:text-xl leading-loose mb-8">
+                      {testimonial.quote}
                     </blockquote>
                     <div className="mt-auto">
                       <p className="font-bold text-white text-lg">{testimonial.clientName}</p>

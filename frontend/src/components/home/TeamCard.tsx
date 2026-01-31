@@ -11,7 +11,7 @@ export default function TeamCard({ member }: TeamCardProps) {
       {/* Image with offset frame */}
       <div className="relative mb-6">
         {/* Image container */}
-        <div className="relative w-52 h-56 bg-brand-brown-100">
+        <div className="relative w-60 h-[180px] bg-brand-brown-100">
           {member.image ? (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img

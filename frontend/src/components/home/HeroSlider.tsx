@@ -67,8 +67,14 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
                 <div className="absolute inset-0 bg-brand-brown-500" />
               )}
 
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/50" />
+              {/* Dark overlay - linear gradient per design: #4B2615 28% → 68% opacity */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(to right, rgba(75, 38, 21, 0.28), rgba(75, 38, 21, 0.68))',
+                }}
+              />
 
               {/* Content */}
               <div className="relative z-10 h-full flex items-center">

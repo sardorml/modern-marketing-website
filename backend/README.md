@@ -36,9 +36,47 @@ yarn build
 
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
 
-```
-yarn strapi deploy
-```
+### Deploy to Strapi Cloud (CLI)
+
+1. **Prerequisites**
+   - Google, GitHub, or GitLab account
+   - Local Strapi project **&lt; 100MB**
+   - Node.js and npm/yarn
+
+2. **Login** (from the `backend` folder):
+   ```bash
+   npx strapi login
+   ```
+   A browser window opens; confirm the code and sign in with Google, GitHub, or GitLab.
+
+3. **Deploy**:
+   ```bash
+   npx strapi deploy
+   ```
+   This creates a **Free plan** project on Strapi Cloud. Strapi Cloud provides a managed PostgreSQL database; you don’t need to set `DATABASE_*` env vars.
+
+4. **Optional – Auto-deploy on git push**
+   - Push your code to GitHub or GitLab.
+   - In [Strapi Cloud](https://cloud.strapi.io) → your project → **Settings** → **General**, connect the repository.
+   - Enable **“Deploy the project on every commit pushed to this branch”**.
+
+After deployment, use the Cloud dashboard for metrics, env vars, and trigger deploys.
+
+**Enable API for the frontend (fix “content keeps loading”):**  
+On a new Strapi Cloud project, the **Public** role has no API permissions. In the Strapi admin of your Cloud project:
+
+1. Open **Settings** (left sidebar) → **Users & Permissions** → **Roles**.
+2. Click **Public**.
+3. Under **Permissions**, for each content type your frontend uses, enable:
+   - **Hero-slide**: `find`, `findOne`
+   - **Site-setting**: `find` (single type)
+   - **Testimonial**: `find`, `findOne`
+   - **Team-member**: `find`, `findOne`
+   - **Service**: `find`, `findOne`
+   - **Subscriber**: `create` (if the frontend submits the newsletter form)
+4. Click **Save**.
+
+After saving, public API calls will succeed and the frontend can load content.
 
 ## 📚 Learn more
 

@@ -118,13 +118,21 @@ body {
   }
 }
 
-/* Team section Swiper - dark arrows */
+/* Team section Swiper - don’t create positioning context so nav arrows use max-w-7xl as parent */
+.team-swiper {
+  position: static !important;
+}
+
+/* Team section Swiper - dark arrows, above slides (position required for z-index) */
 .team-swiper .swiper-button-next,
 .team-swiper .swiper-button-prev {
   display: flex !important;
   color: #1a1a1a !important;
   width: 24px !important;
   height: 24px !important;
+  position: absolute !important;
+  z-index: 20 !important;
+  top: 65% !important;
 }
 
 .team-swiper .swiper-button-next::after,
@@ -134,22 +142,22 @@ body {
 }
 
 .team-swiper .swiper-button-prev {
-  left: 0 !important;
+  left: 10 !important;
   right: auto !important;
 }
 
 .team-swiper .swiper-button-next {
-  right: 0 !important;
+  right: 10 !important;
   left: auto !important;
 }
 
 /* RTL fixes for team section */
 [dir="rtl"] .team-swiper .swiper-button-prev {
   left: auto !important;
-  right: 0 !important;
+  right: 10 !important;
 }
 
 [dir="rtl"] .team-swiper .swiper-button-next {
   right: auto !important;
-  left: 0 !important;
+  left: 10 !important;
 }

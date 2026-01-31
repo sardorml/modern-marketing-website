@@ -20,7 +20,7 @@ export default function TeamSection({ members, lng, heading, description }: Team
 
   return (
     <section id="team" className="py-16 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold text-brand-brown-500 mb-4">
@@ -32,7 +32,7 @@ export default function TeamSection({ members, lng, heading, description }: Team
         </div>
 
         {/* Carousel */}
-        <div className="relative">
+        <div className="max-w-3xl mx-auto">
           <Swiper
             modules={[Navigation]}
             navigation
@@ -41,10 +41,9 @@ export default function TeamSection({ members, lng, heading, description }: Team
             breakpoints={{
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
-              1280: { slidesPerView: 4 },
             }}
             dir={lng === 'ar' ? 'rtl' : 'ltr'}
-            className="team-swiper !px-12"
+            className="team-swiper"
           >
             {members.map((member) => (
               <SwiperSlide key={member.documentId}>

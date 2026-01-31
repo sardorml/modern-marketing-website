@@ -53,7 +53,7 @@ export default function SearchInline({ lng, variant = 'icon', initialQuery = '' 
   }
 
   return (
-    <div className="relative">
+    <div className="relative flex items-center">
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
