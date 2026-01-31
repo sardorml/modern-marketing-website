@@ -1,5 +1,7 @@
 'use client';
 
+import { ChevronLeftIcon, ChevronRightIcon } from '@/icons';
+
 interface PaginationProps {
   currentPage: number;
   pageCount: number;
@@ -49,9 +51,7 @@ export default function Pagination({ currentPage, pageCount, onPageChange }: Pag
         disabled={currentPage === 1}
         className="px-2 py-1 text-sm text-gray-500 hover:text-brand-brown-500 disabled:opacity-30 disabled:cursor-not-allowed"
       >
-        <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
+        <ChevronLeftIcon className="w-4 h-4 rtl:rotate-180" />
       </button>
 
       {/* Page numbers */}
@@ -81,9 +81,7 @@ export default function Pagination({ currentPage, pageCount, onPageChange }: Pag
         disabled={currentPage === pageCount}
         className="px-2 py-1 text-sm text-gray-500 hover:text-brand-brown-500 disabled:opacity-30 disabled:cursor-not-allowed"
       >
-        <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        <ChevronRightIcon className="w-4 h-4 rtl:rotate-180" />
       </button>
     </div>
   );

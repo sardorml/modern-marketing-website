@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { SearchIcon } from '@/icons';
 import { useRouter } from 'next/navigation';
 import type { Locale } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
@@ -36,9 +37,7 @@ export default function SearchInline({ lng, variant = 'icon', initialQuery = '' 
     return (
       <form onSubmit={handleSubmit} className="flex-1 max-w-xl">
         <div className="flex items-center border border-white/50 bg-white/10 backdrop-blur-sm">
-          <svg className="w-5 h-5 text-white ms-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <SearchIcon className="w-5 h-5 text-white ms-3" />
           <input
             ref={inputRef}
             type="text"
@@ -60,9 +59,7 @@ export default function SearchInline({ lng, variant = 'icon', initialQuery = '' 
           className="text-white hover:text-brand-brown-100 transition"
           aria-label={t('nav.search')}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <SearchIcon className="w-5 h-5" />
         </button>
       ) : (
         <form onSubmit={handleSubmit} className="flex items-center">

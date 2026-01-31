@@ -15,6 +15,33 @@ interface HeroSliderProps {
   lng: Locale;
 }
 
+function HeroSlideBackground({ slide }: { slide: HeroSlide }) {
+  if (slide.mediaType === 'video' && slide.video) {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={getStrapiMediaUrl(slide.video)} type="video/mp4" />
+      </video>
+    );
+  }
+  if (slide.image) {
+    return (
+      /* eslint-disable-next-line @next/next/no-img-element */
+      <img
+        src={getStrapiMediaUrl(slide.image)}
+        alt={slide.heading}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    );
+  }
+  return <div className="absolute inset-0 bg-brand-brown-500" />;
+}
+
 export default function HeroSlider({ slides, lng }: HeroSliderProps) {
   const { t } = useTranslation(lng);
 
@@ -45,27 +72,7 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
         {slides.map((slide) => (
           <SwiperSlide key={slide.documentId}>
             <div className="relative h-full w-full">
-              {/* Background */}
-              {slide.mediaType === 'video' && slide.video ? (
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={getStrapiMediaUrl(slide.video)} type="video/mp4" />
-                </video>
-              ) : slide.image ? (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={getStrapiMediaUrl(slide.image)}
-                  alt={slide.heading}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-brand-brown-500" />
-              )}
+              <HeroSlideBackground slide={slide} />
 
               {/* Dark overlay - linear gradient per design: #4B2615 28% → 68% opacity */}
               <div

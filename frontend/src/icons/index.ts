@@ -1,0 +1,14 @@
+export { default as SearchIcon } from './SearchIcon';
+export { default as ChevronDownIcon } from './ChevronDownIcon';
+export { default as ChevronLeftIcon } from './ChevronLeftIcon';
+export { default as ChevronRightIcon } from './ChevronRightIcon';
+export { default as MenuIcon } from './MenuIcon';
+export { default as CloseIcon } from './CloseIcon';
+export { default as ArrowLeftIcon } from './ArrowLeftIcon';
+export { default as ArrowRightIcon } from './ArrowRightIcon';
+export { default as WhatsAppIcon } from './WhatsAppIcon';
+export { default as PhoneIcon } from './PhoneIcon';
+export { default as EmailIcon } from './EmailIcon';
+export { default as TwitterIcon } from './TwitterIcon';
+export { default as FacebookIcon } from './FacebookIcon';
+export { default as GooglePlusIcon } from './GooglePlusIcon';

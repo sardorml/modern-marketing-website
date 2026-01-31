@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ChevronDownIcon, MenuIcon, CloseIcon } from '@/icons';
 import type { Locale } from '@/i18n/settings';
 import type { Service } from '@/lib/api/services';
 import type { SiteSettings } from '@/lib/api/siteSettings';
@@ -79,9 +80,7 @@ export default function Header({ lng, services, siteSettings, variant = 'default
             >
               <button className="text-white text-sm hover:text-brand-brown-100 transition flex items-center gap-1">
                 {t('nav.services')}
-                <svg className={`w-3 h-3 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <ChevronDownIcon className={`w-3 h-3 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {servicesOpen && (
                 <ServicesDropdown services={services} lng={lng} />
@@ -114,13 +113,11 @@ export default function Header({ lng, services, siteSettings, variant = 'default
               className="lg:hidden text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileMenuOpen ? (
+                <CloseIcon className="w-6 h-6" />
+              ) : (
+                <MenuIcon className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
