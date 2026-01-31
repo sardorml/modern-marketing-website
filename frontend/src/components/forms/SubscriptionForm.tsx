@@ -53,7 +53,7 @@ export default function SubscriptionForm({ lng }: SubscriptionFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-[8px] bg-brand-brown-500 text-white px-5 py-1.5 text-sm font-medium hover:bg-brand-brown-400 transition disabled:opacity-50 shrink-0"
+            className="rounded-[8px] bg-brand-brown-500 text-white px-5 py-1.5 text-sm font-medium hover:bg-brand-brown-400 transition disabled:opacity-50 shrink-0 cursor-pointer"
           >
             {isSubmitting ? '...' : t('footer.subscribeBtn')}
           </button>

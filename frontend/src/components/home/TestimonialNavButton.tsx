@@ -14,8 +14,10 @@ export default function TestimonialNavButton({ direction, disabled, onClick, ari
   return (
     <button
       onClick={onClick}
-      className={`w-12 h-12 rounded-full flex items-center justify-center transition ${
-        isActive ? 'bg-white text-brand-brown-500 hover:bg-brand-brown-50' : 'bg-brand-brown-400 text-white'
+      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 ${
+        isActive
+          ? 'bg-white text-brand-brown-500 hover:bg-brand-brown-50 hover:scale-110 hover:shadow-lg cursor-pointer'
+          : 'bg-brand-brown-400 text-white cursor-not-allowed'
       }`}
       aria-label={ariaLabel}
       disabled={disabled}

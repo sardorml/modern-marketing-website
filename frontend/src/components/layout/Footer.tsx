@@ -16,6 +16,8 @@ export default function Footer({ lng, siteSettings }: FooterProps) {
 
   const footerLinks = siteSettings?.footerLinks || [];
   const copyright = siteSettings?.copyrightText || t('footer.copyright');
+  const hasSocialUrls =
+    !!(siteSettings?.twitterUrl || siteSettings?.facebookUrl || siteSettings?.googleplusUrl);
 
   return (
     <footer className="border-t border-white/20 bg-brand-brown-500 text-white">
@@ -23,26 +25,28 @@ export default function Footer({ lng, siteSettings }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-3">
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-6 sm:gap-8">
           <SubscriptionForm lng={lng} />
-          <div className="flex items-center gap-4 mb-5">
-            <span className="text-sm text-white/90">{t('footer.contacts')}</span>
-            <div className="flex items-center gap-3">
-              {siteSettings?.twitterUrl && (
-                <a href={siteSettings.twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown-100 transition">
-                  <TwitterIcon className="w-5 h-5" />
-                </a>
-              )}
-              {siteSettings?.facebookUrl && (
-                <a href={siteSettings.facebookUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown-100 transition">
-                  <FacebookIcon className="w-5 h-5" />
-                </a>
-              )}
-              {siteSettings?.googleplusUrl && (
-                <a href={siteSettings.googleplusUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown-100 transition">
-                  <GooglePlusIcon className="w-5 h-5" />
-                </a>
-              )}
+          {hasSocialUrls && (
+            <div className="flex items-center gap-4 mb-5">
+              <span className="text-sm text-white/90">{t('footer.contacts')}</span>
+              <div className="flex items-center gap-3">
+                {siteSettings?.twitterUrl && (
+                  <a href={siteSettings.twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown-100 transition">
+                    <TwitterIcon className="w-5 h-5" />
+                  </a>
+                )}
+                {siteSettings?.facebookUrl && (
+                  <a href={siteSettings.facebookUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown-100 transition">
+                    <FacebookIcon className="w-5 h-5" />
+                  </a>
+                )}
+                {siteSettings?.googleplusUrl && (
+                  <a href={siteSettings.googleplusUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown-100 transition">
+                    <GooglePlusIcon className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
