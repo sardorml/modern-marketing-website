@@ -44,7 +44,7 @@ export default function TeamSection({ members, lng, heading, description }: Team
               1280: { slidesPerView: 4 },
             }}
             dir={lng === 'ar' ? 'rtl' : 'ltr'}
-            className="!px-8"
+            className="team-swiper !px-12"
           >
             {members.map((member) => (
               <SwiperSlide key={member.documentId}>

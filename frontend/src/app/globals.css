@@ -23,14 +23,14 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Swiper overrides - Mobile first (< 1400px) */
-.swiper-button-next,
-.swiper-button-prev {
+/* Hero Swiper - hide arrows on mobile (< 1400px) */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
   display: none !important;
 }
 
-/* Pagination - bottom centered horizontal by default */
-.swiper-pagination {
+/* Hero Pagination - bottom centered horizontal by default */
+.hero-swiper .swiper-pagination {
   left: 50% !important;
   transform: translateX(-50%) !important;
   bottom: 24px !important;
@@ -42,7 +42,7 @@ body {
   z-index: 20 !important;
 }
 
-.swiper-pagination-bullet {
+.hero-swiper .swiper-pagination-bullet {
   display: block !important;
   width: 10px !important;
   height: 10px !important;
@@ -54,14 +54,14 @@ body {
   cursor: pointer;
 }
 
-.swiper-pagination-bullet-active {
+.hero-swiper .swiper-pagination-bullet-active {
   background: white !important;
 }
 
-/* Large screens (>= 1400px) - Show arrows, vertical pagination on left */
+/* Large screens (>= 1400px) - Show hero arrows, vertical pagination on left */
 @media (min-width: 1400px) {
-  .swiper-button-next,
-  .swiper-button-prev {
+  .hero-swiper .swiper-button-next,
+  .hero-swiper .swiper-button-prev {
     display: flex !important;
     color: white !important;
     width: 16px !important;
@@ -71,34 +71,34 @@ body {
     right: auto !important;
   }
 
-  .swiper-button-prev {
+  .hero-swiper .swiper-button-prev {
     left: 50px !important;
     right: auto !important;
   }
 
-  .swiper-button-next {
+  .hero-swiper .swiper-button-next {
     right: 50px !important;
     left: auto !important;
   }
 
   /* RTL fixes - override Swiper's RTL behavior */
-  [dir="rtl"] .swiper-button-prev {
+  [dir="rtl"] .hero-swiper .swiper-button-prev {
     left: auto !important;
     right: 50px !important;
   }
 
-  [dir="rtl"] .swiper-button-next {
+  [dir="rtl"] .hero-swiper .swiper-button-next {
     right: auto !important;
     left: 50px !important;
   }
 
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
+  .hero-swiper .swiper-button-next::after,
+  .hero-swiper .swiper-button-prev::after {
     font-size: 16px !important;
     font-weight: 300 !important;
   }
 
-  .swiper-pagination {
+  .hero-swiper .swiper-pagination {
     left: 50px !important;
     right: auto !important;
     top: 60% !important;
@@ -108,12 +108,48 @@ body {
   }
 
   /* RTL pagination on right side */
-  [dir="rtl"] .swiper-pagination {
+  [dir="rtl"] .hero-swiper .swiper-pagination {
     left: auto !important;
     right: 50px !important;
   }
 
-  .swiper-pagination-bullet {
+  .hero-swiper .swiper-pagination-bullet {
     margin: 6px 0 !important;
   }
+}
+
+/* Team section Swiper - dark arrows */
+.team-swiper .swiper-button-next,
+.team-swiper .swiper-button-prev {
+  display: flex !important;
+  color: #1a1a1a !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.team-swiper .swiper-button-next::after,
+.team-swiper .swiper-button-prev::after {
+  font-size: 24px !important;
+  font-weight: 300 !important;
+}
+
+.team-swiper .swiper-button-prev {
+  left: 0 !important;
+  right: auto !important;
+}
+
+.team-swiper .swiper-button-next {
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* RTL fixes for team section */
+[dir="rtl"] .team-swiper .swiper-button-prev {
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .team-swiper .swiper-button-next {
+  right: auto !important;
+  left: 0 !important;
 }

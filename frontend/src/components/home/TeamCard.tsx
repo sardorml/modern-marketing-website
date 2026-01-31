@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import type { TeamMember } from '@/lib/api/team';
 import { getStrapiMediaUrl } from '@/lib/api/strapi';
 
@@ -9,20 +8,23 @@ interface TeamCardProps {
 export default function TeamCard({ member }: TeamCardProps) {
   return (
     <div className="flex flex-col items-center text-center py-4">
-      {/* Image */}
-      <div className="w-40 h-40 rounded-full overflow-hidden mb-4 relative bg-brand-brown-100">
-        {member.image ? (
-          <Image
-            src={getStrapiMediaUrl(member.image)}
-            alt={member.name}
-            fill
-            className="object-cover"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-brand-brown-500 text-4xl font-bold">
-            {member.name.charAt(0)}
-          </div>
-        )}
+      {/* Image with offset frame */}
+      <div className="relative mb-6">
+        {/* Image container */}
+        <div className="relative w-52 h-56 bg-brand-brown-100">
+          {member.image ? (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={getStrapiMediaUrl(member.image)}
+              alt={member.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-brand-brown-500 text-4xl font-bold">
+              {member.name.charAt(0)}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Info */}

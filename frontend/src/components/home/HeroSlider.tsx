@@ -40,7 +40,7 @@ export default function HeroSlider({ slides, lng }: HeroSliderProps) {
           clickable: true,
         }}
         loop
-        className="h-full w-full"
+        className="hero-swiper h-full w-full"
         dir={lng === 'ar' ? 'rtl' : 'ltr'}
       >
         {slides.map((slide) => (
