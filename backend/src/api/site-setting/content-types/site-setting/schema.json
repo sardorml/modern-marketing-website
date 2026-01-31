@@ -1,0 +1,78 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "Site Settings",
+    "description": "Global site configuration"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "bookAppointmentUrl": {
+      "type": "string"
+    },
+    "bookAppointmentLabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    },
+    "twitterUrl": {
+      "type": "string"
+    },
+    "facebookUrl": {
+      "type": "string"
+    },
+    "googleplusUrl": {
+      "type": "string"
+    },
+    "footerLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    },
+    "copyrightText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    },
+    "teamSectionHeading": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    },
+    "teamSectionDescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    },
+    "testimonialSectionHeading": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    },
+    "testimonialSectionDescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": { "localized": true }
+      }
+    }
+  }
+}

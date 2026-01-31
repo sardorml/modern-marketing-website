@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+frontend/.next/
+frontend/out/
+backend/dist/
+backend/build/
+backend/.cache/
+
+# Strapi
+backend/.tmp/
+backend/public/uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Strapi database (SQLite)
+backend/*.db
+backend/*.db-journal

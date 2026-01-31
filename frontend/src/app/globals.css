@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-brown-50: #F5EDE8;
+  --color-brand-brown-100: #E8D5C9;
+  --color-brand-brown-200: #C9A68E;
+  --color-brand-brown-300: #A97753;
+  --color-brand-brown-400: #704C2E;
+  --color-brand-brown-500: #3B2314;
+  --color-brand-brown-600: #2F1C10;
+  --color-brand-brown-700: #23150C;
+  --color-brand-brown-800: #170E08;
+  --color-brand-brown-900: #0B0704;
+  --color-brand-brown: #3B2314;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
+}
+
+body {
+  background: #ffffff;
+  color: #171717;
+  font-family: var(--font-sans);
+}
+
+/* Swiper overrides */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
